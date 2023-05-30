@@ -1,17 +1,18 @@
 from typing import Any, Dict
-from django.db.models.query import QuerySet
-from django.shortcuts import render, HttpResponseRedirect
+
 from django.contrib.auth.decorators import login_required
+
+from django.db.models.query import QuerySet
+from django.shortcuts import HttpResponseRedirect, render
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
-from products.models import ProductCategory, Product, Basket
+
 from common.views import TitleMixin
-
-
+from products.models import Basket, Product, ProductCategory
 
 
 class IndexView(TitleMixin, TemplateView):
-    template_name = 'products\index.html'
+    template_name = 'products/index.html'
     title = 'Store'
     
 
@@ -21,7 +22,7 @@ class IndexView(TitleMixin, TemplateView):
 
 class ProductsListView(TitleMixin, ListView):
     model = Product
-    template_name = 'products\products.html'
+    template_name = 'products/products.html'
     paginate_by = 3
     title = 'Store - Каталог'
 
