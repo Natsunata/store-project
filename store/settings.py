@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'products',
     'django_extensions',
+    'orders',
     'users',
 ]
 
@@ -203,3 +204,8 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+# Celery
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
