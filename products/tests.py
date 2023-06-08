@@ -30,7 +30,7 @@ class ProductsListViewTestCase(TestCase):
         path = reverse('products:index')
         response = self.client.get(path)
         
-
+        self._common_tests(response)
         self.assertEqual(list(response.context_data['object_list']), list(self.products[:3]))
         
 
@@ -39,7 +39,7 @@ class ProductsListViewTestCase(TestCase):
         path = reverse('products:category', kwargs={'category_id':category.id})
         response = self.client.get(path)
         
-
+        self._common_tests(response)
         self.assertEqual(list(response.context_data['object_list']), list(self.products.filter(category_id=category.id)))
         
 

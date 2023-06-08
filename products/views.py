@@ -1,7 +1,6 @@
 from typing import Any, Dict
 
 from django.contrib.auth.decorators import login_required
-
 from django.db.models.query import QuerySet
 from django.shortcuts import HttpResponseRedirect, render
 from django.views.generic.base import TemplateView
