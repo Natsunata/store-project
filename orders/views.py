@@ -1,10 +1,8 @@
 from http import HTTPStatus
 
-
 import stripe
 from django.conf import settings
-
-from django.http import  HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse, reverse_lazy
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.base import TemplateView

@@ -1,9 +1,11 @@
 from rest_framework import status
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAdminUser, IsAuthenticated
-from products.models import Product, Basket
-from products.serializers import ProductSerializer, BaskerSerializer
+
+from products.models import Basket, Product
+from products.serializers import BaskerSerializer, ProductSerializer
+
 
 class ProductModelViewSet(ModelViewSet):
     queryset = Product.objects.all()
